@@ -66,19 +66,9 @@ onMounted(() => {
 </script>
 
 
-
-
-
-
-
-
-
-
-
 <template>
-  <!-- Hiển thị component theo route -->
+<!--  trang chủ -->
   <div class="home-container">
-    <!-- <Hello /> -->
     <div class="banner_category">
       <div class="row">
         <div class="col-md-4 ps-0 pe-0">
