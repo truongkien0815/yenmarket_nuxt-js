@@ -36,7 +36,7 @@ useHead({
         class="header-content pd-container w-100 max-width d-flex align-items-center justify-content-between"
       >
         <div class="img-brand select-none">
-          <img
+          <LazyNuxtImg
             class="cursor-pointer"
             src="/images/logo-brand.D-hX70gZ.png"
             alt=""
@@ -52,7 +52,7 @@ useHead({
           </div>
         </div>
         <div class="header-hotline select-none pc-none">
-          <img
+          <LazyNuxtImg
             class="icon-primary cursor-pointer"
             src="/images/icon-hotline.svg"
             alt=""
@@ -62,7 +62,7 @@ useHead({
           >
         </div>
         <div class="header-user select-none pc-none">
-          <img
+          <LazyNuxtImg
             class="cursor-pointer icon-primary"
             src="/images/icon-user.svg"
             alt=""
@@ -73,14 +73,14 @@ useHead({
         </div>
         <div class="header-right select-none">
           <div class="btn-cart p-1 cursor-pointer pc-none">
-            <img
+            <LazyNuxtImg
               class="icon-primary"
               src="/images/icon-cart.svg"
               alt=""
             /><!---->
           </div>
           <div class="header-lang">
-            <img class="cursor-pointer" src="/images/flag-vi.svg" alt="" /><img
+            <LazyNuxtImg class="cursor-pointer" src="/images/flag-vi.svg" alt="" /><img
               class="cursor-pointer"
               src="/images/flag-en.svg"
               alt=""

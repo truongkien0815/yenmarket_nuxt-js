@@ -81,7 +81,8 @@ onMounted(() => {
       <div class="row">
         <div class="col-md-4 ps-0 pe-0">
           <ul id="ul_category">
-            <li>PROMOTION</li>
+            <li>PROMOTION 
+            </li>
             <li>OUR PRODUCTS</li>
           </ul>
         </div>
@@ -107,14 +108,14 @@ onMounted(() => {
     </div>
     <div class="banner_new pt-3 overflow-scroll-x">
       <div class="banner-scroll d-flex">
-        <img src="/images/banner3_1.png" alt="" />
-        <img src="/images/banner3_2.png" alt="" />
-        <img src="/images/banner3_3.png" alt="" />
+        <LazyNuxtImg src="/images/banner3_1.png" alt="" />
+        <LazyNuxtImg src="/images/banner3_2.png" alt="" />
+        <LazyNuxtImg src="/images/banner3_3.png" alt="" />
       </div>
     </div>
 
     <div class="banner_address">
-      <img
+      <LazyNuxtImg
         src="https://mastererp.mylifecompany.com/Resources/Images/Object/Banner9114012025041546_S.jpg"
         alt=""
       />
@@ -128,13 +129,15 @@ onMounted(() => {
       <div v-else class="product-list">
         <div class="card" v-for="item in product_fishseafoo" :key="item.id">
           <div class="image-product">
-            <img
+           
+            
+                        <LazyNuxtImg
               :src="item.image"
               class="card-img-top"
-              alt="item.name"
+              :alt="item.name"
               loading="lazy"
             />
-            <div class="buy"><img src="/images/icon-cart.svg" alt="" /></div>
+            <div class="buy"><LazyNuxtImg src="/images/icon-cart.svg" alt="" /></div>
           </div>
           <div class="card-bodyf">
             <h5 class="card-title">{{ item.name }}</h5>
@@ -162,13 +165,17 @@ onMounted(() => {
       <div v-else class="product-list">
         <div class="card" v-for="item in product_frozenmeat" :key="item.id">
           <div class="image-product">
-            <img
-              :src="item.image"
-              class="card-img-top"
-              alt="item.name"
-              loading="lazy"
-            />
-            <div class="buy"><img src="/images/icon-cart.svg" alt="" /></div>
+           
+                      <LazyNuxtImg
+            :src="item.image"
+            class="card-img-top"
+            :alt="item.name"
+            loading="lazy"
+          />
+            <div class="buy">
+              <LazyNuxtImg src="/images/icon-cart.svg" alt=""/>
+             
+              </div>
           </div>
           <div class="card-bodyf">
             <h5 class="card-title">{{ item.name }}</h5>
@@ -228,7 +235,7 @@ onMounted(() => {
 .banner-scroll {
   display: flex;
   flex-wrap: nowrap;
-  gap: 1rem; /* khoảng cách giữa ảnh nếu cần */
+  gap: 1rem; 
 }
 .banner-scroll img {
   width: auto;
@@ -365,6 +372,9 @@ img {
   }
 }
 @media screen and (max-width: 770px) {
+  .banner-scroll img{
+    width: 80%;
+  }
   .product-list {
     grid-template-columns: repeat(2, 1fr);
   }

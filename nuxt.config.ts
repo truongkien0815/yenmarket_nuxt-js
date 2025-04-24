@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
   css: ['bootstrap/dist/css/bootstrap.min.css'],
+  modules: ['@nuxt/image'],
   vite: {
     define: {
       'process.env': {}
