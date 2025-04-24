@@ -1,5 +1,5 @@
 
-1) Để tối ưu SEO tốt hơn https://yenmarket.vn, tôi đã tập trung vào ba mảng chính: kỹ thuật, nội dung và trải nghiệm người dùng.
+1. Để tối ưu SEO tốt hơn https://yenmarket.vn, tôi đã tập trung vào ba mảng chính: kỹ thuật, nội dung và trải nghiệm người dùng.
 Cụ thể, tôi đã:
 Tối ưu tốc độ tải trang, lazy load hình ảnh, nén tài nguyên.
 Xây dựng chiến lược nội dung chuẩn SEO, với các bài blog chuyên sâu, tối ưu heading và từ khóa dài.
@@ -9,7 +9,7 @@ Cấu trúc trang web ưa nhìn, dễ thao tác, dễ dàng sử dụng.
 Ngoài ra, tôi triển khai sitemap, robots.txt đầy đủ, theo dõi kết quả qua Google Search Console và thường xuyên cập nhật theo thuật toán mới.
 
 //
-2) Nếu trang web của bạn có hơn 2000 sản phẩm và khoảng 10 ngành hàng, thì việc quản lý, hiển thị và tối ưu trải nghiệm người dùng là rất quan trọng.
+2. Nếu trang web của bạn có hơn 2000 sản phẩm và khoảng 10 ngành hàng, thì việc quản lý, hiển thị và tối ưu trải nghiệm người dùng là rất quan trọng.
 Cần phân trang sản phẩm:
 	Hiển thị mỗi trang khoảng 20–40 sản phẩm.
 	Dùng lazy load / infinite scroll nếu muốn hiện đại hơn.
