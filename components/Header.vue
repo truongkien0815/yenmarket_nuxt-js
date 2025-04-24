@@ -339,6 +339,10 @@ useHead({
   }
 }
 @media screen and (max-width: 770px) {
+  .header-container .header-content .header-find{
+    min-width: 120px;
+    padding: 0;
+  }
   .offcanvas-header {
     justify-content: space-around;
   }

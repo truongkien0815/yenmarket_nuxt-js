@@ -11,9 +11,9 @@ Ngoài ra, tôi triển khai sitemap, robots.txt đầy đủ, theo dõi kết q
 //
 2) Nếu trang web của bạn có hơn 2000 sản phẩm và khoảng 10 ngành hàng, thì việc quản lý, hiển thị và tối ưu trải nghiệm người dùng là rất quan trọng.
 Cần phân trang sản phẩm:
-	Hiển thị mỗi trang khoảng 20–40 sản phẩm
-	Dùng lazy load / infinite scroll nếu muốn hiện đại hơn
-Chia theo danh mục rõ ràng
-Thêm tính năng tìm kiếm 
-Kết hợp search + filter để hỗ trợ truy vấn tốt hơn
-Dùng lazy load cho ảnh sản phẩm
+	Hiển thị mỗi trang khoảng 20–40 sản phẩm.
+	Dùng lazy load / infinite scroll nếu muốn hiện đại hơn.
+Chia theo danh mục rõ ràng.
+Thêm tính năng tìm kiếm .
+Kết hợp search + filter để hỗ trợ truy vấn tốt hơn.
+Dùng lazy load cho ảnh sản phẩm.
