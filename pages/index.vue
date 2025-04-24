@@ -57,7 +57,7 @@ onMounted(() => {
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 7777000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     allowTouchMove: false,
