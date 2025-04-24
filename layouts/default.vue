@@ -1,18 +1,15 @@
 import { HeaderW, Header, Footer } from '../.nuxt/components';
 <template>
-   <div>
-   <Header />
+  <div>
+    <Header />
     <NuxtPage />
-   <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>

@@ -3,33 +3,31 @@
 
 
 <script setup>
-import { useHead } from '#imports'
+import { useHead } from "#imports";
 
 useHead({
   link: [
     {
-      rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css',
-      integrity: 'sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7',
-      crossorigin: 'anonymous'
-
-
-    }
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css",
+      integrity:
+        "sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7",
+      crossorigin: "anonymous",
+    },
   ],
   script: [
     {
-      src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js',
-      integrity: 'sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq',
-      crossorigin: 'anonymous',
-      body: true
-    }
-  ]
-})
+      src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js",
+      integrity:
+        "sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq",
+      crossorigin: "anonymous",
+      body: true,
+    },
+  ],
+});
 </script>
 
 <template>
-
-
   <header>
     <div class="header-container">
       <div
@@ -80,43 +78,88 @@ useHead({
             /><!---->
           </div>
           <div class="header-lang">
-            <LazyNuxtImg class="cursor-pointer" src="/images/flag-vi.svg" alt="" /><img
+            <LazyNuxtImg
               class="cursor-pointer"
-              src="/images/flag-en.svg"
+              src="/images/flag-vi.svg"
               alt=""
-            />
+            /><img class="cursor-pointer" src="/images/flag-en.svg" alt="" />
           </div>
         </div>
       </div>
       <!---->
     </div>
-    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-  <div class="bg-dark p-4">
-    <h5 class="text-body-emphasis h4">Collapsed content</h5>
-    <span class="text-body-secondary">Toggleable via the navbar brand.</span>
-  </div>
-</div>
-<nav class="navbar navbar-dark bg-danger text-white">
-  <div class="container-nav">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="fw-bolder category_text">
-      Danh mục sản phẩm
-    </div>
-  </div>
-</nav>
 
+    <nav class="navbar navbar-dark bg-danger text-white">
+      <div class="container-nav">
+        <button class="navbar-toggler pc-none" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button
+          class="navbar-toggler mb-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h6 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Danh mục sản phẩm
+            </h6>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >PROMOTION</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">OUR PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">YEN MARKET MENU</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SEASONAL</a>
+              </li>
+              <div class="header-lang">
+                <LazyNuxtImg
+                  class="cursor-pointer"
+                  src="/images/flag-vi.svg"
+                  alt=""
+                  height="28px"
+                /><img
+                  class="cursor-pointer"
+                  src="/images/flag-en.svg"
+                  alt=""
+                  height="28px"
+                />
+              </div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fw-bolder category_text">Danh mục sản phẩm</div>
+      </div>
+    </nav>
   </header>
- 
-  
 </template>
 
 <style scoped>
-.container-nav{
+.container-nav {
   display: flex;
-          padding-left: 4rem ;
-        padding-right: 4rem ;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 .header-container {
   align-items: center;
@@ -240,7 +283,7 @@ useHead({
     brightness(86%) contrast(80%);
 }
 .header-container .header-content .header-right .header-lang {
-      padding-right: 10px;
+  padding-right: 10px;
   display: flex;
   gap: 0.75rem;
   width: -moz-fit-content;
@@ -271,12 +314,16 @@ useHead({
 .p-1 {
   padding: 4px !important;
 }
-.category_text{
+.category_text {
   font-size: 19px;
   line-height: 43px;
-      text-transform: uppercase ;
+  text-transform: uppercase;
 }
-
+@media screen and (min-width: 770px) {
+  .mb-none {
+    display: none;
+  }
+}
 @media screen and (min-width: 1181px) {
   .pd-container {
     padding-left: 4rem !important;
@@ -291,21 +338,50 @@ useHead({
     line-height: 17.5px !important;
   }
 }
-@media screen and (max-width: 770px){
-  .pc-none{
-  display: none !important;
-}
-.category_text{
-  font-size: unset;
-}
-.container-nav {
+@media screen and (max-width: 770px) {
+  .offcanvas-header {
+    justify-content: space-around;
+  }
+  .nav-item .nav-link {
+    color: #000;
+  }
+  .navbar-nav .header-lang {
+    text-align: center;
+    padding: 1rem;
+  }
+  .navbar-nav .header-lang img {
+    margin-left: 10px;
+  }
+  .offcanvas-header {
+    background: #eee;
+    display: flex !important;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+  }
+  .offcanvas {
+    max-width: 70%;
+  }
+  .nav-item {
+    border-bottom: 1px dotted #e1e1e1;
+  }
+  .offcanvas-body {
+    padding-top: 0;
+  }
+  .pc-none {
+    display: none !important;
+  }
+  .category_text {
+    font-size: unset;
+  }
+  .container-nav {
     padding-left: 0;
     padding-right: 0;
-}
-.header-container{
-  background: linear-gradient(0deg, #dc7273, #ca2628);
-  height: 4px;
-}
+  }
+  .header-container {
+    background: linear-gradient(0deg, #dc7273, #ca2628);
+    height: 4px;
+  }
 }
 </style>
 

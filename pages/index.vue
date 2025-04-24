@@ -2,8 +2,8 @@
 
 <script setup>
 import { useHead, onMounted, ref } from "#imports";
-import Swiper from 'swiper/bundle';
-import 'swiper/swiper-bundle.css';
+import Swiper from "swiper/bundle";
+import "swiper/swiper-bundle.css";
 
 useHead({
   title: "Yen Market",
@@ -13,9 +13,6 @@ useHead({
     { property: "og:image", content: "/images/logo-brand-1.png" },
   ],
 });
-
-
-
 
 const product_fishseafoo = ref([]);
 const product_frozenmeat = ref([]);
@@ -49,18 +46,23 @@ const fetchProduct = async () => {
 fetchProduct();
 
 onMounted(() => {
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper(".swiper", {
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
-       clickable: true,
+      el: ".swiper-pagination",
+      clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-  })
-})
+    autoplay: {
+      delay: 7777000,
+      disableOnInteraction: false,
+    },
+    allowTouchMove: false,
+  });
+});
 </script>
 
 
@@ -81,9 +83,10 @@ onMounted(() => {
       <div class="row">
         <div class="col-md-4 ps-0 pe-0">
           <ul id="ul_category">
-            <li>PROMOTION 
-            </li>
-            <li>OUR PRODUCTS</li>
+            <li>PROMOTION</li>
+            <li id="li-after">OUR PRODUCTS</li>
+            <li id="li-after">YEN MARKET MENU</li>
+            <li id="li-after">SEASONAL</li>
           </ul>
         </div>
         <div class="col-md-8">
@@ -94,13 +97,12 @@ onMounted(() => {
                   <img src="/images/Banner8.jpg" alt="Slide 1" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="/images/Banner8.jpg" alt="Slide 2" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/Banner8.jpg" alt="Slide 3" />
+                  <img src="/images/banner1.jpg" alt="Slide 2" />
                 </div>
               </div>
               <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
@@ -129,15 +131,15 @@ onMounted(() => {
       <div v-else class="product-list">
         <div class="card" v-for="item in product_fishseafoo" :key="item.id">
           <div class="image-product">
-           
-            
-                        <LazyNuxtImg
+            <LazyNuxtImg
               :src="item.image"
               class="card-img-top"
               :alt="item.name"
               loading="lazy"
             />
-            <div class="buy"><LazyNuxtImg src="/images/icon-cart.svg" alt="" /></div>
+            <div class="buy">
+              <LazyNuxtImg src="/images/icon-cart.svg" alt="" />
+            </div>
           </div>
           <div class="card-bodyf">
             <h5 class="card-title">{{ item.name }}</h5>
@@ -165,17 +167,15 @@ onMounted(() => {
       <div v-else class="product-list">
         <div class="card" v-for="item in product_frozenmeat" :key="item.id">
           <div class="image-product">
-           
-                      <LazyNuxtImg
-            :src="item.image"
-            class="card-img-top"
-            :alt="item.name"
-            loading="lazy"
-          />
+            <LazyNuxtImg
+              :src="item.image"
+              class="card-img-top"
+              :alt="item.name"
+              loading="lazy"
+            />
             <div class="buy">
-              <LazyNuxtImg src="/images/icon-cart.svg" alt=""/>
-             
-              </div>
+              <LazyNuxtImg src="/images/icon-cart.svg" alt="" />
+            </div>
           </div>
           <div class="card-bodyf">
             <h5 class="card-title">{{ item.name }}</h5>
@@ -197,8 +197,6 @@ onMounted(() => {
 </template>
 
 <style>
-
-
 .card {
   width: 100%;
   border: 1px solid #ddd;
@@ -235,7 +233,7 @@ onMounted(() => {
 .banner-scroll {
   display: flex;
   flex-wrap: nowrap;
-  gap: 1rem; 
+  gap: 1rem;
 }
 .banner-scroll img {
   width: auto;
@@ -337,6 +335,17 @@ img {
 }
 .swiper-pagination {
 }
+
+#ul_category #li-after {
+  align-items: center;
+  background: #f7f7f7;
+  border-bottom: 1px dotted #e1e1e1;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  width: 24rem;
+  position: relative;
+}
 #ul_category li {
   align-items: center;
   background: #f7f7f7;
@@ -347,7 +356,7 @@ img {
   width: 24rem;
   position: relative;
 }
-#ul_category li::after {
+#ul_category #li-after::after {
   content: "";
   position: absolute;
   left: 93%;
@@ -359,6 +368,7 @@ img {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .banner-container {
   padding-top: 0.75rem;
 }
@@ -372,7 +382,7 @@ img {
   }
 }
 @media screen and (max-width: 770px) {
-  .banner-scroll img{
+  .banner-scroll img {
     width: 80%;
   }
   .product-list {
@@ -390,6 +400,35 @@ img {
     white-space: nowrap;
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.swiper-button-prev, .swiper-button-next{
+      background: #00000080;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    height: unset;
+    width: unset;
+    font-size: 15px;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+     font-size: 15px;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev {
+    font-size: 15px;
+}
+.swiper-pagination-bullet {
+  height: 12px ;
+  width: 12px;
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
 }
 </style>
 
